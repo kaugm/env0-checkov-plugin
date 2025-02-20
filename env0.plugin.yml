@@ -1,0 +1,13 @@
+name: CheckovS3BucketName
+icon: https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPsdhUMbF4FBmeun5DtMEN4C-eLcLjteM7ssAA1PBE&s
+inputs:
+  directory:
+    description: The IaC directory you want to scan with Checkov.
+    required: true
+  flags:
+    description: Additional Checkov flags
+run:
+  exec: |
+    python3 -m venv ${HOME}/.checkov 
+    ${HOME}/.checkov/bin/pip install --no-compile --disable-pip-version-check checkov
+    ${HOME}/.checkov/bin/checkov --directory ${inputs.directory} ${inputs.flags}
