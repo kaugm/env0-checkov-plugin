@@ -1,0 +1,7 @@
+version: 2
+deploy:
+  steps:
+    terraformPlan:
+      after:
+        - name: Checkov
+          use: https://github.com/kaugm/env0-checkov-plugin
