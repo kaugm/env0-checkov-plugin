@@ -35,6 +35,8 @@ class S3BucketNameStartsWith(BaseResourceCheck):
 
 		# Test for bucket name starts with
         name = conf.get("bucket")
+	print(conf)
+	print(name)
 	# name = conf['planned_values']['root_module']['resources'][0]['values']['bucket']
         if name[0][:4] == "env0":
         	return CheckResult.PASSED
