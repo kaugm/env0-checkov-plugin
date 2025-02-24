@@ -11,4 +11,4 @@ run:
     python3 -m venv ${HOME}/.checkov 
     ${HOME}/.checkov/bin/pip install --no-compile --disable-pip-version-check checkov
     echo $ENV0_TF_PLAN_JSON
-    ${HOME}/.checkov/bin/checkov -f ${inputs.directory} ${inputs.flags}
+    ${HOME}/.checkov/bin/checkov -f $ENV0_TF_PLAN_JSON ${inputs.flags}
