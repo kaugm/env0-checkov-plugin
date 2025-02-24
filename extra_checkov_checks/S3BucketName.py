@@ -31,7 +31,7 @@ class S3BucketNameStartsWith(BaseResourceCheck):
                 if acl_block in [["public-read"], ["public-read-write"], ["website"]]:
                     return CheckResult.FAILED
         return CheckResult.PASSED
-        """
+        
 
 		# Test for bucket name starts with
         name = conf.get("bucket")
@@ -41,6 +41,8 @@ class S3BucketNameStartsWith(BaseResourceCheck):
         if name[0][:4] == "env0":
         	return CheckResult.PASSED
         return CheckResult.FAILED
+	"""
+	return conf
 
 
 
